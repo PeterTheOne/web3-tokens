@@ -26,16 +26,16 @@ describe('TokensPlugin Tests', () => {
 		});
 
 		it('should call TokensPlugin ERC20 Contract balanceOf with expected RPC object', async () => {
-      const daiAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
       const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
 			const erc20Contract = web3Context.tokens.erc20(daiAddress);
-      await erc20Contract.methods.balanceOf(vitalikEth);
+      await erc20Contract.methods.balanceOf(vitalikEth).call();
 			expect(requestManagerSendSpy).toHaveBeenCalledWith({
 				method: 'eth_call',
 				params: [
 					{
-						data: '0x70a082310000000000000000000000006b175474e89094c44da98b954eedeac495271d0f',
-						input: '0xfeaf968c',
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
 						to: daiAddress,
 					},
 					'latest',
