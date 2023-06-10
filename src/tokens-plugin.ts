@@ -33,3 +33,10 @@ export class TokensPlugin extends Web3PluginBase {
     return new Contract(ERC4626.abi, address);
   }
 }
+
+// Module Augmentation
+declare module 'web3' {
+  interface Web3Context {
+    tokens: TokensPlugin;
+  }
+}
