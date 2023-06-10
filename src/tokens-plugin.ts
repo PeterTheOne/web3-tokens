@@ -9,6 +9,10 @@ import ERC4626 from './artifacts/ERC4626';
 export class TokensPlugin extends Web3PluginBase {
   public pluginNamespace = 'tokens';
 
+  public constructor() {
+		super();
+  }
+
   public erc20(address: string): Contract<typeof ERC20.abi> {
     return new Contract(ERC20.abi, address);
   }
