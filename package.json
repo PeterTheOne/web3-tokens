@@ -1,8 +1,9 @@
 {
   "name": "web3-tokens",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "",
-  "main": "index.js",
+  "main": "lib/tokens-plugin.js",
+  "types": "lib/tokens-plugin.d.ts",
   "scripts": {
     "gen": "node -r ts-node/register ./scripts/gen-artifact-types ./src/artifacts",
     "build": "tsc --build",
