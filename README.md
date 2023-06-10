@@ -6,12 +6,6 @@ is a web3.js version 4 plugin that gives you Contract instances for the most com
 Uses `@openzeppelin/contracts` as a source of contract abi files and does contract type inferance like https://github.com/web3/web3-contract-types-example .
 
 
-how to publish
---------------
-
-Run `npm run build` and then `npm publish --access public`.
-
-
 how to use it
 -------------
 
@@ -29,3 +23,14 @@ const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
 const erc20Contract = await web3.tokens.erc20(daiAddress);
 await erc20Contract.method.balanceOf(vitalikEth);
 ```
+
+how to test
+-----------
+
+Run `npm run test`.
+
+
+how to publish
+--------------
+
+Run `npm run build` and then `npm publish --access public`.

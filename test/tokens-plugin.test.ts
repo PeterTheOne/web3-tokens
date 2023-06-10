@@ -1,5 +1,4 @@
 import Web3, { Web3Eth, Web3Context }  from 'web3';
-
 import { TokensPlugin } from '../src/tokens-plugin';
 
 describe('TokensPlugin Tests', () => {
