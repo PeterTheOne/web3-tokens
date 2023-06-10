@@ -1,6 +1,6 @@
 {
   "name": "web3-tokens",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "lib/tokens-plugin.js",
   "types": "lib/tokens-plugin.d.ts",
