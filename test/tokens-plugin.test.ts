@@ -1,9 +1,9 @@
-import Web3, { Web3Eth, Web3Context }  from 'web3';
+import Web3, { Web3Eth, core }  from 'web3';
 import { TokensPlugin } from '../src/tokens-plugin';
 
 describe('TokensPlugin Tests', () => {
 	it('should register TokensPlugin plugin on Web3Context instance', () => {
-		const web3Context = new Web3Context('http://127.0.0.1:8545');
+		const web3Context = new core.Web3Context('http://127.0.0.1:8545');
 		web3Context.registerPlugin(new TokensPlugin());
 		expect(web3Context.tokens).toBeDefined();
 	});
@@ -28,7 +28,7 @@ describe('TokensPlugin Tests', () => {
 		it('should call TokensPlugin ERC20 Contract balanceOf with expected RPC object', async () => {
       const daiAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';
       const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
-			const erc20Contract = await web3Context.tokens.erc20(daiAddress);
+			const erc20Contract = web3Context.tokens.erc20(daiAddress);
       await erc20Contract.methods.balanceOf(vitalikEth);
 			expect(requestManagerSendSpy).toHaveBeenCalledWith({
 				method: 'eth_call',
