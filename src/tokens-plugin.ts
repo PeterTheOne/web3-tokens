@@ -9,28 +9,34 @@ import ERC4626 from './artifacts/ERC4626';
 export class TokensPlugin extends Web3PluginBase {
   public pluginNamespace = 'tokens';
 
-  public constructor() {
-		super();
-  }
-
   public erc20(address: string): Contract<typeof ERC20.abi> {
-    return new Contract(ERC20.abi, address);
-  }
-
-  public erc777(address: string): Contract<typeof ERC777.abi> {
-    return new Contract(ERC777.abi, address);
+    const erc20Contract = new Contract(ERC20.abi, address);
+    erc20Contract.link(this);
+    return erc20Contract;
   }
 
   public erc721(address: string): Contract<typeof ERC721.abi> {
-    return new Contract(ERC721.abi, address);
+    const erc721Contract = new Contract(ERC721.abi, address);
+    erc721Contract.link(this);
+    return erc721Contract;
+  }
+
+  public erc777(address: string): Contract<typeof ERC777.abi> {
+    const erc777Contract = new Contract(ERC777.abi, address);
+    erc777Contract.link(this);
+    return erc777Contract;
   }
 
   public erc1155(address: string): Contract<typeof ERC1155.abi> {
-    return new Contract(ERC1155.abi, address);
+    const erc1155Contract = new Contract(ERC1155.abi, address);
+    erc1155Contract.link(this);
+    return erc1155Contract;
   }
 
   public erc4626(address: string): Contract<typeof ERC4626.abi> {
-    return new Contract(ERC4626.abi, address);
+    const erc4626Contract = new Contract(ERC4626.abi, address);
+    erc4626Contract.link(this);
+    return erc4626Contract;
   }
 }
 

@@ -29,7 +29,7 @@ describe('TokensPlugin Tests', () => {
       const daiAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';
       const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
 			const erc20Contract = await web3Context.tokens.erc20(daiAddress);
-      await erc20Contract.method.balanceOf(vitalikEth);
+      await erc20Contract.methods.balanceOf(vitalikEth);
 			expect(requestManagerSendSpy).toHaveBeenCalledWith({
 				method: 'eth_call',
 				params: [
