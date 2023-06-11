@@ -3,5 +3,13 @@
   "@openzeppelin/contracts/build/contracts/ERC721.json",
   "@openzeppelin/contracts/build/contracts/ERC777.json",
   "@openzeppelin/contracts/build/contracts/ERC1155.json",
-  "@openzeppelin/contracts/build/contracts/ERC4626.json"
+  "@openzeppelin/contracts/build/contracts/ERC4626.json",
+  "@openzeppelin/contracts/build/contracts/IERC20.json",
+  "@openzeppelin/contracts/build/contracts/IERC20Metadata.json",
+  "@openzeppelin/contracts/build/contracts/IERC721.json",
+  "@openzeppelin/contracts/build/contracts/IERC721Metadata.json",
+  "@openzeppelin/contracts/build/contracts/IERC777.json",
+  "@openzeppelin/contracts/build/contracts/IERC1155.json",
+  "@openzeppelin/contracts/build/contracts/IERC1155MetadataURI.json",
+  "@openzeppelin/contracts/build/contracts/IERC4626.json"
 ]

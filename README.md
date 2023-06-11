@@ -34,3 +34,11 @@ how to publish
 --------------
 
 Run `npm run build` and then `npm publish --access public`.
+
+
+how to add more contracts
+-------------------------
+
+Add them to `artifacts.json` and run `npm run gen`.
+
+Then update the `tokens-plugin.ts`.

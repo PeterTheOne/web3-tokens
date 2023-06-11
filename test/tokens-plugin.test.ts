@@ -30,7 +30,133 @@ describe('TokensPlugin Tests', () => {
       const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
 			const erc20Contract = web3Context.tokens.erc20(daiAddress);
       await erc20Contract.methods.balanceOf(vitalikEth).call();
-			expect(requestManagerSendSpy).toHaveBeenCalledWith({
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin ERC721 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const erc721Contract = web3Context.tokens.erc721(daiAddress);
+      await erc721Contract.methods.balanceOf(vitalikEth).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin ERC1155 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const erc1155Contract = web3Context.tokens.erc1155(daiAddress);
+      await erc1155Contract.methods.balanceOf(vitalikEth, 1).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x00fdd58e000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa960450000000000000000000000000000000000000000000000000000000000000001',
+						input: '0x00fdd58e000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa960450000000000000000000000000000000000000000000000000000000000000001',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin ERC4626 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const erc4626Contract = web3Context.tokens.erc4626(daiAddress);
+      await erc4626Contract.methods.balanceOf(vitalikEth).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin IERC20 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const ierc20Contract = web3Context.tokens.ierc20(daiAddress);
+      await ierc20Contract.methods.balanceOf(vitalikEth).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin IERC721 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const ierc721Contract = web3Context.tokens.ierc721(daiAddress);
+      await ierc721Contract.methods.balanceOf(vitalikEth).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						input: '0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin IERC1155 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const ierc1155Contract = web3Context.tokens.ierc1155(daiAddress);
+      await ierc1155Contract.methods.balanceOf(vitalikEth, 1).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
+				method: 'eth_call',
+				params: [
+					{
+						data: '0x00fdd58e000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa960450000000000000000000000000000000000000000000000000000000000000001',
+						input: '0x00fdd58e000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa960450000000000000000000000000000000000000000000000000000000000000001',
+						to: daiAddress,
+					},
+					'latest',
+				],
+			});
+		});
+
+		it('should call TokensPlugin IERC4626 Contract balanceOf with expected RPC object', async () => {
+      const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
+      const vitalikEth = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+			const ierc4626Contract = web3Context.tokens.ierc4626(daiAddress);
+      await ierc4626Contract.methods.balanceOf(vitalikEth).call();
+			expect(requestManagerSendSpy).toHaveBeenLastCalledWith({
 				method: 'eth_call',
 				params: [
 					{
