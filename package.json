@@ -1,7 +1,7 @@
 {
   "name": "web3-tokens",
-  "version": "0.1.8",
-  "description": "",
+  "version": "0.1.9",
+  "description": "web3-tokens is a web3.js version 4 plugin that gives you Contract instances for the most common token standards including at least ERC20, ERC721 and ERC1155.",
   "main": "lib/tokens-plugin.js",
   "types": "lib/tokens-plugin.d.ts",
   "scripts": {
@@ -9,8 +9,8 @@
     "build": "tsc --build",
     "test": "jest --config=./test/jest.config.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Peter Grassberger <petertheone@gmail.com> (https://petergrassberger.at/)",
+  "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.1",
     "web3": "^4.0.2-dev.af57eae.0"
